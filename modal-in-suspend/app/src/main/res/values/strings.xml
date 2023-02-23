@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">modal in suspend</string>
+    <string name="show_bottom_sheet_dialog_action">Show Bottom Sheet Dialog Action</string>
+    <string name="show_bottom_sheet_dialog_fragment_action">Show Bottom Sheet Dialog Fragment Action</string>
+</resources>
