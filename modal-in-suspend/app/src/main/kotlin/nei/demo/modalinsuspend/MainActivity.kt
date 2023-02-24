@@ -10,7 +10,9 @@ import kotlinx.coroutines.CoroutineScope
 import nei.demo.modalinsuspend.data.actions
 import nei.demo.modalinsuspend.databinding.ActivityMainBinding
 import nei.demo.modalinsuspend.ui.dialog.showActionBottomSheetDialog
+import nei.demo.modalinsuspend.ui.dialog.showActionMaterialAlertDialogBuilder
 import nei.demo.modalinsuspend.ui.dialog_fragment.ActionBottomSheetDialogFragment.Companion.showActionBottomSheetDialogFragment
+import nei.demo.modalinsuspend.utils.toast
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -23,15 +25,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.actionBottomSheetDialogBtn.launchOnClick {
-            val actionSelected =
-                showActionBottomSheetDialog(this@MainActivity, actions)
-            toast("Action selected ${actionSelected?.type ?: "none"}")
+            val actionSelected = showActionBottomSheetDialog(this@MainActivity, actions)
+            addToast("Action selected ${actionSelected?.type ?: "none"}")
         }
 
         binding.actionBottomSheetDialogFragmentBtn.launchOnClick {
-            val actionSelected =
-                showActionBottomSheetDialogFragment(this@MainActivity, actions)
-            toast("Action selected ${actionSelected?.type ?: "none"}")
+            val actionSelected = showActionBottomSheetDialogFragment(this@MainActivity, actions)
+            addToast("Action selected ${actionSelected?.type ?: "none"}")
+        }
+
+        binding.actionMaterialAlertDialogBtn.launchOnClick {
+            val actionSelected = showActionMaterialAlertDialogBuilder(this@MainActivity, actions)
+            addToast("Action selected ${actionSelected?.type ?: "none"}")
         }
     }
 
@@ -41,7 +46,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun toast(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    private var toast: Toast? = null
+    private fun addToast(msg: String) {
+        toast?.cancel()
+        toast = toast(msg)
+        toast?.show()
     }
 }

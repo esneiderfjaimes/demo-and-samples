@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import nei.demo.modalinsuspend.data.Action
@@ -48,13 +48,13 @@ class ActionBottomSheetDialogFragment(
         private const val TAG = "ActionBSDF"
 
         suspend fun showActionBottomSheetDialogFragment(
-            activity: AppCompatActivity,
+            fragmentActivity: FragmentActivity,
             actions: List<Action>
         ): Action? = suspendCoroutine { continuation ->
             val modal = ActionBottomSheetDialogFragment(actions) {
                 continuation.resume(it)
             }
-            modal.show(activity.supportFragmentManager, TAG)
+            modal.show(fragmentActivity.supportFragmentManager, TAG)
         }
     }
 }

@@ -22,4 +22,11 @@
         android:layout_marginHorizontal="@dimen/horizontal_margin"
         android:text="@string/show_bottom_sheet_dialog_fragment_action" />
 
+    <Button
+        android:id="@+id/action_material_alert_dialog_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/horizontal_margin"
+        android:text="@string/show_material_alert_dialog_action" />
+
 </LinearLayout>

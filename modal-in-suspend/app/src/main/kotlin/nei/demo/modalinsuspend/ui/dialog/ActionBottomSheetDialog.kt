@@ -1,6 +1,6 @@
 package nei.demo.modalinsuspend.ui.dialog
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import nei.demo.modalinsuspend.data.Action
@@ -10,7 +10,7 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
 suspend fun showActionBottomSheetDialog(
-    activity: AppCompatActivity,
+    activity: Activity,
     actions: List<Action>
 ): Action? = suspendCoroutine { continuation ->
     val dialog = BottomSheetDialog(activity)
