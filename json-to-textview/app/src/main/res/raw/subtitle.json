@@ -1,0 +1,39 @@
+{
+  "subtitle": [
+    {
+      "type": "typography",
+      "props": {
+        "label": "Película",
+        "type": "titleS"
+      }
+    },
+    {
+      "type": "typography",
+      "props": {
+        "label": " | ",
+        "type": "titleXS"
+      }
+    },
+    {
+      "type": "typography",
+      "props": {
+        "label": "Drama",
+        "type": "titleM"
+      }
+    },
+    {
+      "type": "typography",
+      "props": {
+        "label": " | ",
+        "type": "titleXS"
+      }
+    },
+    {
+      "type": "typography",
+      "props": {
+        "label": "50m",
+        "type": "titleM"
+      }
+    }
+  ]
+}
