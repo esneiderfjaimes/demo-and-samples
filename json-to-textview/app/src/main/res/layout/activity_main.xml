@@ -3,13 +3,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#C8C8C8"
+    tools:context=".ui.MainActivity">
 
     <TextView
-        android:id="@+id/text_view"
-        android:layout_width="match_parent"
+        android:id="@+id/without_style_text_view"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        tools:text="Text" />
+        android:background="@color/white"
+        android:ellipsize="end"
+        android:maxLines="1"
+        tools:text="Película | Drama | 50m" />
 
+    <TextView
+        android:id="@+id/with_style_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/without_style_text_view"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:ellipsize="end"
+        android:maxLines="1"
+        tools:text="Película | Drama | 50m" />
+
+    <TextView
+        android:id="@+id/with_style_ellipsize_text_view"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/with_style_text_view"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:ellipsize="end"
+        android:maxLines="1"
+        tools:text="Película | Drama | 50m" />
+
+    <TextView
+        android:id="@+id/example1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/with_style_ellipsize_text_view"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Película | Drama | 50m"
+        android:textSize="@dimen/text_size_m"
+        tools:ignore="HardcodedText" />
 </RelativeLayout>
